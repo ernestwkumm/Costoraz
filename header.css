@@ -1,0 +1,34 @@
+.header{
+  height: 65px;px;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position:fixed;
+  
+  top:0;
+  left: 0;
+  right:0;
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style:solid;
+  border-bottom-color:rgb(190, 190, 190);
+  z-index:100;
+}
+
+  .Logo_full{
+  height: 60px;px;
+}
+
+.left-section{
+
+  display:flex;
+  align-items: center;
+}
+
+.hamburger-menu{
+  height:30px;
+  margin-left: 24px;
+  margin-right: 20px;
+}
