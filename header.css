@@ -1,24 +1,30 @@
 .header{
-  height: 65px;px;
-
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  position:fixed;
+  height: 65px;
   
   top:0;
   left: 0;
   right:0;
-  background-color: white;
+  background-color: rgb(158, 47, 47);
   border-bottom-width: 1px;
   border-bottom-style:solid;
   border-bottom-color:rgb(190, 190, 190);
   z-index:100;
 }
 
-  .Logo_full{
-  height: 60px;px;
+.paragraph{  
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+
+}
+
+.Logo_full{
+  height: 60px;
+  margin-top: 2px;
+}
+
+.hidden{
+  display:none;
 }
 
 .left-section{
