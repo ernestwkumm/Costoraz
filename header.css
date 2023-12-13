@@ -1,40 +1,61 @@
-.header{
+.header {
+  display: flex;
   height: 65px;
-  
-  top:0;
-  left: 0;
-  right:0;
   background-color: white;
   border-bottom-width: 1px;
-  border-bottom-style:solid;
-  border-bottom-color:rgb(190, 190, 190);
-  z-index:100;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(190, 190, 190);
+  z-index: 100;
 }
 
-.paragraph{  
-  background-color: white;
-  margin-left: 20px;
-  margin-top: 20px;
-
+.left-section {
+  display: flex;
+  align-items: center;
 }
 
-.Logo_full{
+.center-section {
+  flex-grow: 1;
+  text-align: center;
+  height: 15px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  height: 30px;
+  margin-left: 24px;
+  margin-right: 20px;
+}
+
+.Logo_full {
   height: 60px;
   margin-top: 2px;
 }
 
-.hidden{
-  display:none;
+.Page_Name {
+  font-size: 30px;
 }
 
-.left-section{
-
-  display:flex;
-  align-items: center;
+.User_Name {
+  font-size: 20px;
 }
 
-.hamburger-menu{
-  height:30px;
-  margin-left: 24px;
-  margin-right: 20px;
+.Logo_User {
+  height: 60px;
+  margin-top: 50 px;
+  margin-right: 100 px;
+  border-radius: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.paragraph {
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 20px;
 }

@@ -1,10 +1,9 @@
-console.log("hello world!");
 
 const btn = document.querySelector(".hamburger-menu");
 const logo = document.querySelector(".Logo_full");
 const paragraph = document.querySelector(".paragraph")
 
-console.dir(btn);
+
 
 loadData()
 
@@ -20,8 +19,13 @@ async function loadData(){
   
   const data = await res.json();
   console.log(data);
+  const [id,created,code] = data;
+  console.log(id);
+
 }
 
+
+paragraph.innerHTML = id;
 
 
 
