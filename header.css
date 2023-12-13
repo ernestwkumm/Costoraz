@@ -1,10 +1,15 @@
-.header {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Archivo Narrow", sans-serif;
+  box-sizing: border-box;
+  color: rgba(49, 49, 49, 0.87);
+}
+
+.headerContainer {
   display: flex;
   height: 65px;
-  background-color: white;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(190, 190, 190);
+  border-bottom: 1px solid rgb(190, 190, 190);
   z-index: 100;
 }
 
@@ -25,9 +30,10 @@
 }
 
 .hamburger-menu {
-  height: 30px;
-  margin-left: 24px;
+  height: 40px;
+  margin-left: 10px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .Logo_full {
@@ -36,18 +42,75 @@
 }
 
 .Page_Name {
+  display: block;
   font-size: 30px;
+  padding-top: 18px;
 }
 
 .User_Name {
   font-size: 20px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.User_Title {
+  font-size: 15px;
+  font-family: "Archivo Narrow", sans-serif;
 }
 
 .Logo_User {
   height: 60px;
-  margin-top: 50 px;
-  margin-right: 100 px;
+  padding-right: 10px;
   border-radius: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  width: 190px;
+  height: 100vh;
+  border-right: 1px solid rgb(190, 190, 190);
+  padding: 0 10px;
+  transform: translateX(-500px);
+  transition: 0.5s;
+}
+.showmenu {
+  transform: translateX(0);
+}
+.menu li {
+  list-style-type: none;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu li:first-child {
+  font-weight: bold;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 20px;
+  transition: font-weight 0.2s;
+}
+
+.menu li a:hover {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1000px) {
+  .menu {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu li a {
+    font-size: 16px;
+  }
 }
 
 .hidden {
@@ -55,7 +118,6 @@
 }
 
 .paragraph {
-  background-color: white;
   margin-left: 20px;
   margin-top: 20px;
 }
