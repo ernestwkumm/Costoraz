@@ -24,6 +24,12 @@
   height: 15px;
 }
 
+.Company-section {
+  display: flex;
+  text-align: center;
+  height: 15px;
+}
+
 .right-section {
   display: flex;
   align-items: center;
@@ -41,10 +47,26 @@
   margin-top: 2px;
 }
 
+.Logo_Company {
+  display: flex;
+  height: 60px;
+  margin-top: 2px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.Company_Name {
+  display: block;
+  font-size: 30px;
+  padding-top: 1%;
+  margin-right: 15px;
+  padd
+}
+
 .Page_Name {
   display: block;
   font-size: 30px;
-  padding-top: 18px;
+  padding-top: 15px;
 }
 
 .User_Name {
