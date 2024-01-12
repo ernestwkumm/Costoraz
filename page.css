@@ -14,8 +14,8 @@
   height: 100vh;
   border-right: 1px solid rgb(190, 190, 190);
   padding: 0 10px;
-  transform: translateX(-175px);
-  transition: 0.5s;
+  /* transform: translateX(-175px);
+  transition: 0.5s; */
 }
 
 .showmenu {
