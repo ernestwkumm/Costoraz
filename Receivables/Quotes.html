@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Costoraz</title>
+    <link
+      rel="icon"
+      href="../../Content/Logo - Short.JPG"
+      type="image/x-icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Roboto+Slab:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../CSS/header.css" />
+    <link rel="stylesheet" href="../../CSS/page.css" />
+  </head>
+
+  <body>
+    <header class="headerContainer">
+      <div class="left-section">
+        <img class="hamburger-menu" src="../../Content/hamburger-menu.svg" />
+        <img class="Logo_full" src="../../Content/Logo - Full.JPG" />
+      </div>
+
+      <div class="center-section">
+        <h1 class="Page_Name">Quotes</h1>
+      </div>
+
+      <div class="Company-section">
+        <h1 class="Company_Name">Colorworx</h1>
+        <img class="Logo_Company" src="../../Content/Logo - Company.JPG" />
+      </div>
+
+      <div class="right-section">
+        <h1 class="User_Name">
+          Ernest Kumm
+          <p class="User_Title">Technical director</p>
+        </h1>
+        <div></div>
+        <img class="Logo_User" src="../../Content/User01.JPG" />
+      </div>
+    </header>
+
+    <page class="page">
+      <ul class="menu">
+        <li>
+          <a href="#"><a href="../../index.html">Home</a></a>
+        </li>
+        <li>
+          <a href="#"><a href="../receivables.html">Receivables</a></a>
+        </li>
+      </ul>
+
+      <div class="paragraph">This is my Quote Page</div>
+      <button class="buttonPDF" onclick="generatePDF()">
+        Generate PDF quote
+      </button>
+
+      <!-- https://www.youtube.com/watch?v=GbZa9s9Siss -->
+      <!-- https://www.npmjs.com/package/jspdf-invoice-template -->
+
+      <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+
+      <script>
+        function generatePDF() {
+          var pdfObject = jsPDFInvoiceTemplate.default(props);
+
+          // const pdfObject = jsPDFInvoiceTemplate(props); //returns number of pages created
+        }
+
+        var props = {
+          outputType: jsPDFInvoiceTemplate.OutputType.Save,
+          returnJsPDFDocObject: true,
+          fileName: "Invoice 2021",
+          orientationLandscape: false,
+          compress: true,
+          logo: {
+            src: "../../content/Logo - CompanyFull.JPeG",
+            type: "JPeG", //optional, when src= data:uri (nodejs case)
+            width: 53.33, //aspect ratio = width/height
+            height: 26.66,
+            margin: {
+              top: 0, //negative or positive num, from the current position
+              left: 0, //negative or positive num, from the current position
+            },
+          },
+          stamp: {
+            inAllPages: true, //by default = false, just in the last page
+            src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
+            type: "JPG", //optional, when src= data:uri (nodejs case)
+            width: 20, //aspect ratio = width/height
+            height: 20,
+            margin: {
+              top: 0, //negative or positive num, from the current position
+              left: 0, //negative or positive num, from the current position
+            },
+          },
+          business: {
+            name: "Colorworx",
+            address: "Plot 59, Goudvlakte,Carletonville",
+            phone: "087 805 6113",
+            email: "info@colorworx.co.za",
+            website: "www.colorworx.co.za",
+          },
+          contact: {
+            label: "Invoice issued for:",
+            name: "Client Name",
+            address: "Albania, Tirane, Astir",
+            phone: "(+355) 069 22 22 222",
+            email: "client@website.al",
+            otherInfo: "www.website.al",
+          },
+          invoice: {
+            label: "Quote #: ",
+            num: 2586,
+            invDate: "Payment Date: 01/01/2021 18:12",
+            invGenDate: "Invoice Date: 02/02/2021 10:17",
+            headerBorder: false,
+            tableBodyBorder: false,
+            header: [
+              {
+                title: "#",
+                style: {
+                  width: 10,
+                },
+              },
+              {
+                title: "Title",
+                style: {
+                  width: 30,
+                },
+              },
+              {
+                title: "Description",
+                style: {
+                  width: 80,
+                },
+              },
+              { title: "Price" },
+              { title: "Quantity" },
+              { title: "Unit" },
+              { title: "Total" },
+            ],
+            table: Array.from(Array(16), (item, index) => [
+              index + 1,
+              "There are many variations ",
+              "Lorem Ipsum is simply dummy text dummy text ",
+              200.5,
+              4.5,
+              "m2",
+              200.5 * 4.5,
+            ]),
+
+            additionalRows: [
+              {
+                col1: "Total:",
+                col2: "145,250.50",
+                col3: "ALL",
+                style: {
+                  fontSize: 14, //optional, default 12
+                },
+              },
+              {
+                col1: "VAT:",
+                col2: "20",
+                col3: "%",
+                style: {
+                  fontSize: 10, //optional, default 12
+                },
+              },
+              {
+                col1: "SubTotal:",
+                col2: "116,199.90",
+                col3: "ALL",
+                style: {
+                  fontSize: 10, //optional, default 12
+                },
+              },
+            ],
+
+            invDescLabel: "Quote Note",
+            invDesc:
+              "Please note that this quotation is valid for a30 day period only.",
+            invDesc:
+              "Please ensure that all item details, quantities and sizes are correct prior to accepting the quotation as this will be considered the responsibility of the client.",
+          },
+          footer: {
+            text: "The invoice is created on a computer and is valid without the signature and stamp.",
+          },
+          pageEnable: true,
+          pageLabel: "Page ",
+        };
+      </script>
+
+      <!-- ------------------------------------------- -->
+    </page>
+  </body>
+</html>
