@@ -64,9 +64,12 @@
       <!-- https://www.npmjs.com/package/jspdf-invoice-template -->
 
       <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+
       <script>
         function generatePDF() {
           var pdfObject = jsPDFInvoiceTemplate.default(props);
+
+          // const pdfObject = jsPDFInvoiceTemplate(props); //returns number of pages created
         }
 
         var props = {
@@ -76,8 +79,8 @@
           orientationLandscape: false,
           compress: true,
           logo: {
-            src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/logo.png",
-            type: "PNG", //optional, when src= data:uri (nodejs case)
+            src: "../../content/Logo - CompanyFull.jpg",
+            type: "jpg", //optional, when src= data:uri (nodejs case)
             width: 53.33, //aspect ratio = width/height
             height: 26.66,
             margin: {
@@ -97,12 +100,11 @@
             },
           },
           business: {
-            name: "Business Name",
-            address: "Albania, Tirane ish-Dogana, Durres 2001",
-            phone: "(+355) 069 11 11 111",
-            email: "email@example.com",
-            email_1: "info@example.al",
-            website: "www.example.al",
+            name: "Colorworx",
+            address: "Plot 59, Goudvlakte,Carletonville",
+            phone: "087 805 6113",
+            email: "info@colorworx.co.za",
+            website: "www.colorworx.co.za",
           },
           contact: {
             label: "Invoice issued for:",
@@ -113,8 +115,8 @@
             otherInfo: "www.website.al",
           },
           invoice: {
-            label: "Invoice #: ",
-            num: 19,
+            label: "Quote #: ",
+            num: 2586,
             invDate: "Payment Date: 01/01/2021 18:12",
             invGenDate: "Invoice Date: 02/02/2021 10:17",
             headerBorder: false,
@@ -143,15 +145,16 @@
               { title: "Unit" },
               { title: "Total" },
             ],
-            table: Array.from(Array(10), (item, index) => [
+            table: Array.from(Array(16), (item, index) => [
               index + 1,
               "There are many variations ",
               "Lorem Ipsum is simply dummy text dummy text ",
               200.5,
               4.5,
               "m2",
-              400.5,
+              200.5 * 4.5,
             ]),
+
             additionalRows: [
               {
                 col1: "Total:",
@@ -178,9 +181,12 @@
                 },
               },
             ],
-            invDescLabel: "Invoice Note",
+
+            invDescLabel: "Quote Note",
             invDesc:
-              "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+              "Please note that this quotation is valid for a30 day period only.",
+            invDesc:
+              "Please ensure that all item details, quantities and sizes are correct prior to accepting the quotation as this will be considered the responsibility of the client.",
           },
           footer: {
             text: "The invoice is created on a computer and is valid without the signature and stamp.",
