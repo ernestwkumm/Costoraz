@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  href="rptQuotes.css" rel="stylesheet">
+    <title>Index</title>"
+  </head>
+
+  <body>
+    <div class="wrapper" id="quoteTemplate">
+        <div class="border-design top">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+        </div>
+
+        <div class="quote-header">
+
+          <img class="logo_CompanyFull" src="../Content/Logo-CompanyFull.JPG" />
+
+          <div class="companyName">
+            <h1 id="companyName"></h1>
+            <div class="companyNameDetail">
+                <h3>Contact</h3>
+                <h4 id="CompanyContact"></h4>
+            </div>
+            <div class="companyNameDetail">
+              <h3>Email</h3>
+              <h4 id="CompanyEmail"></h4>
+            </div>
+            <div class="companyNameDetail">
+              <h3>Reg</h3>
+              <h4 id="CompanyReg"></h4>
+            </div>
+            <div class="companyNameDetail">
+              <h3>Vat</h3>
+              <h4 id="CompanyVat"></h4>
+            </div>
+          </div>
+
+          <div class="titleDetail">
+            <div class="titleDetailHeader">Quote</div>
+            <div class="titleDetailrow">
+                <h3>Quote #</h3>
+                <h4>36254</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Date</h3>
+              <h4>21/02/2023</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Customer</h3>
+              <h4>Customer Name</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Brand Name</h3>
+              <h4>Brand Name</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Sales Person</h3>
+              <h4>Juandre</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Date Required</h3>
+              <h4>21/02/2023</h4>
+            </div>
+            <div class="titleDetailrow">
+              <h3>Reference</h3>
+              <h4>Site Name</h4>
+            </div>
+          </div>
+
+        </div>
+        <div class="projectDetail">
+          <div class="billing-detail">
+            <p>Billing to</p>
+            <p>Customer</p>
+            <p><span>Contact:</span>123465798</p>
+            <p><span>Email:</span>name@email.com</p>
+            <p><span>Address:</span>123 Street # 1,City</p>
+            <p><span>Vat:</span>123456869</p>          
+          </div>       
+
+          <div class="site-detail">
+            <p>Deliver to</p>
+            <p>Site Name</p>
+            <p><span>Project Manager:</span>Project Manager</p>
+            <p><span>Contact:</span>123465798</p>
+            <p><span>Email:</span>name@email.com</p>
+            <p><span>Address:</span>123 Street # 1,City</p>      
+          </div>       
+
+          <div class="delivery-detail">
+            <p>Job Type</p>
+            <p>New Build</p>
+            <p><span>Floor area:</span>850m2</p> 
+            <p><span>km's from base:</span>350</p>
+            <p><span>Days on site:</span>20</p> 
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <td>No.</td><td>Item Description</td><td>Qty</td><td>Price</td><td>Amount</td>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <tr><td>1</td><td class="l-col">Drywalling</td><td>5</td><td class="r-col">R50.00</td><td class="r-col">R250.00</td></tr>
+            <tr><td>2</td><td class="l-col">Drywalling</td><td>5</td><td class="r-col">R50.00</td><td class="r-col">R250.00</td></tr>
+            <tr><td>3</td><td class="l-col">Drywalling</td><td>5</td><td class="r-col">R50.00</td><td class="r-col">R250.00</td></tr>
+            <tr><td>4</td><td class="l-col">Drywalling</td><td>5</td><td class="r-col">R50.00</td><td class="r-col">R250.00</td></tr>
+            <tr><td>5</td><td class="l-col">Drywalling</td><td>5</td><td class="r-col">R50.00</td><td class="r-col">R250.00</td></tr>
+          </tbody>
+        </table>
+
+        <div class="total-section">
+          <div class="sub">
+            <p>Sub Total:</p>
+            <p>R1250.00</p>
+          </div>
+          <div class="tax">
+            <p>Tax:</p>
+            <p>R0.00</p>
+          </div>
+          <div class="total">
+            <p>Grand Total:</p>
+            <p>R1250.00</p>
+          </div>
+        </div>
+
+        <div class="payment-terms">
+          <div class="payment-detail">
+            <p>Paymnet Info</p>
+            <p><span>Account</span>123 456</p>
+            <p><span>A/C Name</span>Company</p>
+            <p><span>Bank</span>Bank Name</p>
+          </div>
+          <div class="terms">
+            <p>Terms & Conditions</p>
+            <p>Standard terms and conditions</p>
+          </div>
+          <div class="message">
+            <p>Thank you for your busniess</p>
+          </div>
+        </div>
+
+        <div class="signature">
+          <p>Authorized Signature</p>
+        </div>
+
+        <div class="border-design bottom">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+        </div>
+        
+
+      <button class="buttonPDF" id="download-quote" onclick="generatePDF()">
+        Download PDF quote
+      </button>
+    </body>    
+    <script src="../Reports/rptQuoteData.js"></script>
+    <script src="../Reports/rptQuotes.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</html>

@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: grey;
+}
+/* a4 page ration 1:1.411320754716981 */
+.wrapper {
+  width: 795px;
+  height: 1122px;
+  background: white;
+  position: relative;
+  padding: 15px 15px;
+}
+.border-design {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.border-design .c1,
+.border-design .c2,
+.border-design .c3,
+.border-design .c4,
+.border-design .c5 {
+  width: 30px;
+  height: 10px;
+}
+.c1 {
+  background-color: rgb(231, 231, 231);
+}
+.c2 {
+  background-color: rgb(196, 192, 192);
+}
+.c3 {
+  background-color: rgb(173, 173, 173);
+}
+.c4 {
+  background-color: rgb(138, 138, 138);
+}
+.c5 {
+  background-color: rgb(105, 105, 105);
+}
+.border-design.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.border-design.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  flex-direction: row-reverse;
+}
+.quote-header {
+  display: grid;
+  /* background-color: aqua; */
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 0.5rem; */
+  gap: 10px;
+}
+.logo_CompanyFull {
+  width: 180px;
+}
+.companyName,
+h1 {
+  /* background: lightblue; */
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  left: 120px;
+  width: 350px;
+}
+.companyNameDetail {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 3px 0 0 0;
+  gap: 10px;
+}
+.companyNameDetail,
+h3 {
+  font-weight: 700;
+}
+.companyNameDetail,
+h4 {
+  font-weight: 500;
+}
+.logo span {
+  font-weight: 400;
+}
+.titleDetail {
+  /* background: lightblue; */
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: right;
+  width: 200px;
+}
+.titleDetailHeader {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: right;
+}
+.titleDetailrow {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0 0 0;
+}
+.titleDetailrow,
+h3 {
+  font-weight: 700;
+}
+
+.titleDetailrow,
+h4 {
+  font-weight: 500;
+}
+
+.projectDetail {
+  display: flex;
+  gap: 23px;
+  justify-content: baseline;
+}
+
+.billing-detail {
+  margin-top: 15px;
+}
+.billing-detail p:nth-child(1),
+.billing-detail p:nth-child(2) {
+  text-transform: uppercase;
+}
+.billing-detail p:nth-child(2) {
+  font-weight: 700;
+  width: 260px;
+  border-bottom: 1px solid darkgrey;
+  margin-bottom: 3px;
+}
+.billing-detail p:nth-child(3),
+.billing-detail p:nth-child(4),
+.billing-detail p:nth-child(5),
+.billing-detail p:nth-child(6) {
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+}
+.billing-detail p span {
+  font-weight: 600;
+}
+
+.site-detail {
+  margin-top: 15px;
+}
+.site-detail p:nth-child(1),
+.site-detail p:nth-child(2) {
+  text-transform: uppercase;
+}
+.site-detail p:nth-child(2) {
+  font-weight: 700;
+  width: 258px;
+  border-bottom: 1px solid darkgrey;
+  margin-bottom: 3px;
+}
+.site-detail p:nth-child(3),
+.site-detail p:nth-child(4),
+.site-detail p:nth-child(5),
+.site-detail p:nth-child(6) {
+  width: 258px;
+  display: flex;
+  justify-content: space-between;
+}
+.site-detail p span {
+  font-weight: 600;
+}
+
+.delivery-detail {
+  margin-top: 15px;
+}
+.delivery-detail p:nth-child(1),
+.delivery-detail p:nth-child(2) {
+  text-transform: uppercase;
+}
+.delivery-detail p:nth-child(2) {
+  font-weight: 700;
+  width: 200px;
+  border-bottom: 1px solid darkgrey;
+  margin-bottom: 3px;
+}
+.delivery-detail p:nth-child(3),
+.delivery-detail p:nth-child(4),
+.delivery-detail p:nth-child(5),
+.delivery-detail p:nth-child(6) {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.delivery-detail p span {
+  font-weight: 600;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+table thead tr td {
+  text-align: center;
+  font-weight: 600;
+  padding: 5px 5px;
+}
+table tbody td {
+  padding: 5px 5px;
+  text-align: center;
+}
+.l-col {
+  text-align: left;
+}
+.r-col {
+  text-align: right;
+}
+table tbody tr:nth-child(odd) {
+  background: white;
+}
+table tbody tr:nth-child(even) {
+  background: rgb(245, 245, 245);
+  border-bottom: 1px solid darkgrey;
+  border-top: 1px solid darkgrey;
+}
+.total-section {
+  position: absolute;
+  right: 20px;
+  width: 220px;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+.sub,
+.tax,
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.total {
+  border-top: 1px solid darkgrey;
+  padding-top: 5px;
+}
+.sub p:nth-child(1),
+.tax p:nth-child(1),
+.total p {
+  font-weight: 600;
+}
+.payment-terms {
+  position: absolute;
+  bottom: 30px;
+  width: 45%;
+}
+.payment-detail {
+  margin-bottom: 8px;
+}
+.payment-detail p:nth-child(1) {
+  font-size: 12px;
+  font-weight: 700;
+  width: 150px;
+}
+.payment-detail p:nth-child(2),
+.payment-detail p:nth-child(3),
+.payment-detail p:nth-child(4) {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.payment-detail p span {
+  font-weight: 600;
+}
+.terms p:nth-child(1) {
+  font-weight: 700;
+  width: 150px;
+}
+.terms {
+  margin-bottom: 20px;
+}
+.message p {
+  font-weight: 700;
+}
+.signature p {
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  border-top: 1px solid darkgrey;
+}
