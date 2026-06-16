@@ -4,14 +4,45 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+import { Pool } from 'pg'
+
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+})
+
+console.log('DB Config:', {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+})
+
 const app = express()
 const PORT = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'Costoraz API is running' })
+app.get('/health', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT NOW()')
+    res.json({ 
+      status: 'Costoraz API is running',
+      database: 'connected',
+      timestamp: result.rows[0].now
+    })
+  } catch (error) {
+    console.error('DB Error:', error)
+    res.status(500).json({ 
+      status: 'API running',
+      database: 'disconnected',
+      error: String(error)
+    })
+  }
 })
 
 app.listen(PORT, () => {
