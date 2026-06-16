@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+import tenantsRouter from './routes/tenants'
+
 import { Pool } from 'pg'
 
 const pool = new Pool({
@@ -26,6 +28,8 @@ const PORT = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
+app.get('/test', (req, res) => res.json({ message: 'test works' }))
+app.use('/api/tenants', tenantsRouter)
 
 app.get('/health', async (req, res) => {
   try {
