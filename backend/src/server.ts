@@ -6,6 +6,7 @@ dotenv.config()
 
 import tenantsRouter from './routes/tenants'
 import authRouter from './routes/auth'
+import projectsRouter from './routes/projects'
 import { authenticate, AuthRequest } from './middleware/auth'
 
 import { Pool } from 'pg'
@@ -33,6 +34,7 @@ app.use(express.json())
 app.get('/test', (req, res) => res.json({ message: 'test works' }))
 app.use('/api/tenants', tenantsRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/projects', projectsRouter)
 
 
 app.get('/health', async (req, res) => {
