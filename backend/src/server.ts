@@ -5,6 +5,8 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import tenantsRouter from './routes/tenants'
+import authRouter from './routes/auth'
+import { authenticate, AuthRequest } from './middleware/auth'
 
 import { Pool } from 'pg'
 
@@ -30,6 +32,8 @@ app.use(cors())
 app.use(express.json())
 app.get('/test', (req, res) => res.json({ message: 'test works' }))
 app.use('/api/tenants', tenantsRouter)
+app.use('/api/auth', authRouter)
+
 
 app.get('/health', async (req, res) => {
   try {
@@ -47,6 +51,10 @@ app.get('/health', async (req, res) => {
       error: String(error)
     })
   }
+})
+
+app.get('/api/me', authenticate, (req: AuthRequest, res) => {
+  res.json({ user: req.user })
 })
 
 app.listen(PORT, () => {
