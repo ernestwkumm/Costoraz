@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import NewProjectModal from '../components/NewProjectModal'
 
 interface Project {
   id: string
@@ -15,6 +16,7 @@ interface Project {
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
   const token = localStorage.getItem('token')
 
@@ -55,7 +57,9 @@ export default function Projects() {
             <p className="text-xs tracking-widest uppercase text-[#C67C3A] mb-2">Projects</p>
             <h2 className="text-2xl font-medium">Your costing projects</h2>
           </div>
-          <button className="bg-[#C67C3A] text-[#111210] text-xs font-medium px-5 py-2.5 rounded tracking-wide hover:bg-[#d4893f] transition-colors">
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-[#C67C3A] text-[#111210] text-xs font-medium px-5 py-2.5 rounded tracking-wide hover:bg-[#d4893f] transition-colors">
             + New project
           </button>
         </div>
@@ -84,6 +88,13 @@ export default function Projects() {
           </div>
         )}
       </div>
+
+      {showModal && (
+        <NewProjectModal
+          onClose={() => setShowModal(false)}
+          onCreated={fetchProjects}
+        />
+      )}
     </div>
   )
 }
