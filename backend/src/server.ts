@@ -7,6 +7,7 @@ dotenv.config()
 import tenantsRouter from './routes/tenants'
 import authRouter from './routes/auth'
 import projectsRouter from './routes/projects'
+import materialsRouter from './routes/materials'
 import { authenticate, AuthRequest } from './middleware/auth'
 
 import { Pool } from 'pg'
@@ -35,8 +36,7 @@ app.get('/test', (req, res) => res.json({ message: 'test works' }))
 app.use('/api/tenants', tenantsRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/projects', projectsRouter)
-
-
+app.use('/api/projects/:id/materials', materialsRouter)
 app.get('/health', async (req, res) => {
   try {
     const result = await pool.query('SELECT NOW()')

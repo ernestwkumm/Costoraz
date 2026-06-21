@@ -24,18 +24,22 @@ export default function Projects() {
     fetchProjects()
   }, [])
 
-  const fetchProjects = async () => {
-    try {
-      const res = await axios.get('http://localhost:5000/api/projects', {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      setProjects(res.data)
-    } catch (err) {
-      console.error(err)
-    } finally {
-      setLoading(false)
+const fetchProjects = async () => {
+  try {
+    const res = await axios.get('http://localhost:5000/api/projects', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    setProjects(res.data)
+  } catch (err: any) {
+    if (err.response?.status === 401) {
+      localStorage.clear()
+      navigate('/login')
     }
+    console.error(err)
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <div className="min-h-screen bg-[#111210] text-white">
@@ -74,13 +78,13 @@ export default function Projects() {
         ) : (
           <div className="grid gap-1 border border-white/[0.06] rounded-lg overflow-hidden">
             {projects.map(project => (
-              <div key={project.id} className="bg-[#111210] px-6 py-4 flex justify-between items-center hover:bg-white/[0.02] transition-colors cursor-pointer border-b border-white/[0.04]">
+            <div key={project.id} onClick={() => navigate(`/projects/${project.id}`)} className="bg-[#111210] px-6 py-4 flex justify-between items-center hover:bg-white/[0.02] transition-colors cursor-pointer border-b border-white/[0.04]">
                 <div>
                   <p className="text-sm font-medium">{project.name}</p>
                   <p className="text-xs text-white/30 mt-0.5">{project.client_name} · {project.category}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-[#C67C3A]">R {Number(project.total_cost).toLocaleString()}</p>
+                  <p className="text-sm text-[#C67C3A]">R {Number(project.total_cost || 0).toFixed(2)}</p>
                   <p className="text-xs text-white/30 mt-0.5 capitalize">{project.status}</p>
                 </div>
               </div>
