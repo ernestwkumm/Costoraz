@@ -1,10 +1,16 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
+
 function App() {
+  const token = localStorage.getItem('token')
+
   return (
-    <div className="min-h-screen bg-[#111210] flex items-center justify-center">
-      <h1 className="text-4xl font-medium text-white tracking-tight">
-        COSTOR<span className="text-[#C67C3A]">A</span>Z
-      </h1>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/login" />} />
+    </Routes>
   )
 }
 
